@@ -1,87 +1,14 @@
-package main;
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main { // Class which will execute the main method to practice some statistics
-    
-    private static Scanner scanner = new Scanner(System.in);
-    private static Random random = new Random();
-    
-    private static boolean running = true;
-    private static boolean repeat = false;
-    private static int numberOfDiceRolls = 0;
-
-
-    public static boolean getRunning() {
-        return running;
-    }
-
-    public static void setRunning(boolean bool) {
-        running = bool;
-    }
-
-    public static boolean getRepeat() {
-        return repeat;
-    }
-
-    public static void setRepeat(boolean bool) {
-        repeat = bool;
-    }
-
-    public static int getNumberOfDiceRolls() {
-        return numberOfDiceRolls;
-    }
-
-    public static void setNumberOfDiceRolls(int i) {
-        numberOfDiceRolls = i;
-    }
-
-    public static void rollDiceQuestion() {
-        System.out.println("Do you want to roll some dice? (y/n)");
-    }
-    
-    public static char scannerRollDice() {
-        return scanner.next().charAt(0);
-    }
-
-    public static int[] timesOfDice() {
-        int[] timesOfDice = new int[6];
-        for (int i = 0; i < timesOfDice.length; i++) {
-            
-        }
-        return timesOfDice;
-    }
-
+public class DiceRollingSimulator {
     public static void main(String[] args) {
-        int time1 = 0;
-        int time2 = 0;
-        int time3 = 0;
-        int time4 = 0;
-        int time5 = 0;
-        int time6 = 0;
-        
-        rollDiceQuestion();
-        char c = scannerRollDice();
-
-        while (getRunning()) { // Main entry in loop 
-            if (c == 'y' || c == 'Y') {
-                double diceAccumulation = 0;
-                if (!getRepeat()) {
-
-                }
-            } else {
-
-            }
-        }
-    }
-
-
-    public static void main1(String[] args) { // call all necessary methods so the dice roll simulator can begin with all the dialogue and scanner inputs needed
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        
         System.out.println("Do you want to roll some dice? (y/n)");
         char diceRoll = scanner.next().charAt(0);
+        
         boolean running = true;
         boolean repeat = false;
         int numberOfDiceRolls = 0;
@@ -91,6 +18,7 @@ public class Main { // Class which will execute the main method to practice some
         int time4 = 0;
         int time5 = 0;
         int time6 = 0;
+
         final double ONETOSIX = 0.1666;
         while (running) {
             if (diceRoll == 'y' || diceRoll == 'Y') {
@@ -102,7 +30,6 @@ public class Main { // Class which will execute the main method to practice some
                 System.out.println("Here are your dice rolls:");
                 for (int i = 0; i <= numberOfDiceRolls - 1; i++) {
                     int randomDiceRoll = random.nextInt(1, 7);
-
                     switch (randomDiceRoll) {
                         case 1:
                             time1++;
@@ -130,7 +57,6 @@ public class Main { // Class which will execute the main method to practice some
                     }
                 }
 
-                
                 double diceAverage = ((double) (diceAccumulation / numberOfDiceRolls));
                 double diceDeviation = (3.5 - diceAverage);
                 diceDeviation = Math.abs(diceDeviation);
@@ -141,7 +67,7 @@ public class Main { // Class which will execute the main method to practice some
                 double portion4 = (double) time4 / numberOfDiceRolls;
                 double portion5 = (double) time5 / numberOfDiceRolls;
                 double portion6 = (double) time6 / numberOfDiceRolls ;
-
+                
                 System.out.println();
                 System.out.println("Just as a reminder, you rolled " + numberOfDiceRolls + " dice.");
                 System.out.println("This is how often you rolled a '1': " + time1 + ". That equals " + (portion1 * 100) + " %.");
