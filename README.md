@@ -3,6 +3,7 @@ Inluding Java, Python and a batchfile script to simulate throwing dice to practi
 Directoy management:
 
     dice_roll_sim.py
-    DiceRollingSimulator.java
+    DiceRollSim.class
+    DiceRollSim.java
     DiceRollSim.bat
     README.md
